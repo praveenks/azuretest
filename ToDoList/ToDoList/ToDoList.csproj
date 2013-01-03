@@ -176,6 +176,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="ToDoListTracker.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoListTracker.aspx.cs">
+      <DependentUpon>ToDoListTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToDoListTracker.aspx.designer.cs">
+      <DependentUpon>ToDoListTracker.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
