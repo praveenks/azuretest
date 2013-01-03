@@ -9,12 +9,30 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:GridView runat="server">
+        <asp:GridView runat="server" ID="grdToDoList" AutoGenerateColumns="false">
             <Columns>
-                <asp:BoundField DataField="Name" />
-                <asp:BoundField DataField="Completed" />
+                <asp:TemplateField Visible="false">
+                    <ItemTemplate>
+                        <asp:Label ID="lblId" Text='<%# Eval("Id") %>' runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Name">
+                    <ItemTemplate>
+                        <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Completed">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="chkCompleted" runat="server" Checked='<%# Eval("Completed") %>'/>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <asp:Button runat="server" ID="btnUpdate" Text="Update" OnClick="btnUpdate_Click" />
+        <br />
+        <br />
+        <asp:TextBox runat="server" Text="" ID="txtTask"></asp:TextBox>
+        <asp:Button runat="server" ID="btnAdd" Text="Add" OnClick="btnAdd_Click" />
     </div>
     </form>
 </body>
